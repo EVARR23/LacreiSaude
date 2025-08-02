@@ -1,9 +1,16 @@
 - Setup do ambiente local e com Docker
 
+git clone <https://github.com/EVARR23/LacreiSaude>
+cd LacreiSaude
+docker-compose build
+docker-compose up -d
+docker-compose exec web python src/manage.py migrate
+docker-compose exec web python src/manage.py createsuperuser
+
 - Instruções para rodar o projeto
 
     python manage.py runserver
-    URL: <http://127.0.0.1:8000/admin/login/?next=/admin/>
+    URL: <http://localhost:8000/admin/>
     Login: LacreiSaude
     Senha: admin
 

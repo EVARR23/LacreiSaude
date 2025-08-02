@@ -70,16 +70,20 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 
 
+import os  # mova para o topo do arquivo, se quiser
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME':  'LACREI',
-        'USER': 'postgres',
-        'PASSWORD': 'root',
-        'PORT': '5432',
+        'NAME': os.getenv('DATABASE_NAME', 'myapp'),
+        'USER': os.getenv('DATABASE_USER', 'user'),
+        'PASSWORD': os.getenv('DATABASE_PASSWORD', 'password'),
+        'HOST': os.getenv('DATABASE_HOST', 'db'),  # 'db' é o nome do serviço no docker-compose
+        'PORT': os.getenv('DATABASE_PORT', '5432'),  # porta interna do postgres no container
     }
 }
+
+
 
 
 
