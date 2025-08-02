@@ -1,31 +1,62 @@
-- Setup do ambiente local e com Docker
+# 🏥 Lacrei Saúde - API com Django e Docker
 
-git clone <https://github.com/EVARR23/LacreiSaude>
+Este projeto é uma API para gerenciamento de usuários, profissionais e consultas, construída com Django e PostgreSQL, utilizando Docker para facilitar o setup do ambiente.
+
+---
+
+## ⚙️ Setup do Ambiente Local com Docker
+
+```bash
+git clone https://github.com/EVARR23/LacreiSaude
 cd LacreiSaude
 docker-compose build
 docker-compose up -d
 docker-compose exec web python src/manage.py migrate
 docker-compose exec web python src/manage.py createsuperuser
 
-- Instruções para rodar o projeto
 
-    python manage.py runserver
-    URL: <http://localhost:8000/admin/>
-    Login: LacreiSaude
-    Senha: admin
+🚀 Como rodar o projeto (modo local)
+bash
+Copiar
+Editar
+python src/manage.py runserver
+Acesse: http://localhost:8000/admin/
 
-- Comando roda sugger
+Login: LacreiSaude
+Senha: admin
 
-    <http://127.0.0.1:8000/api/usuario/>
-    <http://127.0.0.1:8000/api/profissional/>
-    <http://127.0.0.1:8000/api/consulta/>
 
-- Instruções para rodar os testes com `APITestCase`
+🔗 Endpoints da API (Sugger)
 
-    python manage.py test api.tests.test_profissionais
-    python manage.py test api.tests.test_consultas
+http://localhost:8000/api/profissional/
 
-- Explicações sobre decisões técnicas
-- Instruções de como foi feito o deploy (ambientes, ferramentas, fluxo CI/CD)
+http://localhost:8000/api/consulta/
 
-    github: <https://github.com/EVARR23/LacreiSaude>
+
+🧪 Testes Automatizados com APITestCase
+
+python src/manage.py test api.tests.test_profissionais
+python src/manage.py test api.tests.test_consultas
+
+
+🧠 Decisões Técnicas
+
+Utilização de Django REST Framework para criar uma API RESTful.
+Banco de dados PostgreSQL com persistência de dados via volume Docker.
+Painel administrativo personalizado com django-jazzmin.
+Estrutura de pastas organizada por app.
+Arquivos .env usados para variáveis de ambiente (se necessário futuramente).
+Testes com APITestCase usando o Django Test Client.
+
+
+🚢 Deploy, CI/CD e Versionamento
+
+Versionamento no GitHub: https://github.com/EVARR23/LacreiSaude
+CI/CD via GitHub Actions (pode ser implementado com lint, testes e deploy).
+Docker usado para build e deploy local.
+Possível expansão para deploy em nuvem (ex: AWS, Heroku, Render).
+
+
+👤 Autora
+Eva Rebouças Rodrigues
+GitHub · São José dos Campos – SP · Desenvolvedora e QA
