@@ -16,9 +16,7 @@ docker-compose exec web python src/manage.py createsuperuser
 
 
 🚀 Como rodar o projeto (modo local)
-bash
-Copiar
-Editar
+
 python src/manage.py runserver
 Acesse: http://localhost:8000/admin/
 
