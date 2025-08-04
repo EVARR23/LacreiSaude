@@ -9,8 +9,8 @@ Este projeto é uma API para gerenciamento de usuários, profissionais e consult
 ```bash
 git clone https://github.com/EVARR23/LacreiSaude
 cd LacreiSaude
-docker-compose build
 docker-compose up -d
+docker-compose build
 docker-compose exec web python src/manage.py migrate
 docker-compose exec web python src/manage.py createsuperuser
 
