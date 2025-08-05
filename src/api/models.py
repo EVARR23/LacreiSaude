@@ -18,7 +18,7 @@ class Consulta(models.Model):
         Profissional,
         on_delete=models.CASCADE,
         related_name='consultas',
-        verbose_name="Profissional"
+        verbose_name="ProfissionalS"
     )
 
 
