@@ -1,67 +1,21 @@
-name: Deploy backend para ec2
+name: Atualizar código no EC2
 
 on:
   push:
     branches:
-      - release/v0.1.0
+      - main
 
 jobs:
-  build: 
+  update-code:
     runs-on: ubuntu-latest
     steps:
-      - name: Verificar repositório
-        uses: actions/checkout@v4
-
-      - name: Setup Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: 'zulu'
-          java-version: '17'
-
-      - name: Build project
-        run: mvn clean install && ls
-
-      - name: Removendo jar anterior se existir
+      - name: Atualizando código no EC2
         uses: appleboy/ssh-action@v0.1.7
         with:
-          host: ec2-52-67-1-49.sa-east-1.compute.amazonaws.com
+          host: ec2-56-124-57-201.sa-east-1.compute.amazonaws.com
           username: ec2-user
           key: ${{ secrets.EC2_SSH_KEY }}
           port: 22
           script: |
-            rm -rf /home/ec2-user/target
-
-      - name: Copiando JAR para EC2
-        uses: appleboy/scp-action@master
-        with:
-          host: ec2-52-67-1-49.sa-east-1.compute.amazonaws.com
-          username: ec2-user
-          key: ${{ secrets.EC2_SSH_KEY }}
-          port: 22
-          source: "./target/*"
-          target: "/home/ec2-user"
-
-      - name: Parando instancia anterior da API
-        uses: appleboy/ssh-action@v0.1.7
-        with:
-          host: ec2-52-67-1-49.sa-east-1.compute.amazonaws.com
-          username: ec2-user
-          key: ${{ secrets.EC2_SSH_KEY }}
-          port: 22
-          script: |
-            PID=$(sudo lsof -ti :8080)
-            if [ ! -z "$PID" ]; then
-                sudo kill -9 $PID
-            fi
-
-      - name: Executando nova instancia da API
-        uses: appleboy/ssh-action@v0.1.7
-        with:
-          host: ec2-52-67-1-49.sa-east-1.compute.amazonaws.com
-          username: ec2-user
-          key: ${{ secrets.EC2_SSH_KEY }}
-          port: 22
-          script: |
-            nohup java -jar target/quarkus-app/quarkus-run.jar > output.log 2>&1 &
-
-      
+            cd /home/ec2-user/LacreiSaude
+            git pull 
