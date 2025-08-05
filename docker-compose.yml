@@ -10,7 +10,7 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: myapp
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - pg-data:/var/lib/postgresql/data
     networks:
@@ -18,7 +18,7 @@ services:
 
   web:
     build: .
-    command: python src/manage.py runserver 0.0.0.0:8000
+    command: sh -c "python src/manage.py migrate && python src/manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/code
     ports:
