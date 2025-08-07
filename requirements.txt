@@ -30,4 +30,6 @@ websocket-client==1.8.0
 wsproto==1.2.0
 psycopg2-binary==2.9.9
 djangorestframework
+pyjwt==2.10.1
+djangorestframework-simplejwt
 
