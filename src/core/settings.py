@@ -35,7 +35,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_simplejwt',
+    'drf_spectacular',
     'api',
+    
     
 ]
 
@@ -311,4 +313,12 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.DjangoModelPermissions',
     ),
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Lacrei Saúde',
+    'DESCRIPTION': 'A API foi desenvolvida para fins de estudos e suporte à equipe Lacre Saúde.O Swagger (também conhecido como OpenAPI) é uma ferramenta amplamente reconhecida no universo backend, disponível para diversas linguagens e frameworks.Ele gera uma interface interna na aplicação que descreve, com detalhes completos, cada endpoint e a estrutura das entidades presentes no sistema do Lacre Saúde.Para consumir a API, é necessário realizar o login no sistema Lacre Saúde usando o endpoint - api/login.',
+    'VERSION': '1.0.0',
+    
+    # OTHER SETTINGS
 }
