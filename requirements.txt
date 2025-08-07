@@ -32,4 +32,4 @@ psycopg2-binary==2.9.9
 djangorestframework
 pyjwt==2.10.1
 djangorestframework-simplejwt
-
+drf-spectacular==0.28.0
