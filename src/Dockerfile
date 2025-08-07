@@ -1,5 +1,4 @@
-dockerfile
-CopiarEditar
+
 # 1. Escolhe a imagem base (Python leve)
 FROM python:3.11-slim
 
