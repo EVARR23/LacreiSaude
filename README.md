@@ -25,6 +25,7 @@ cd LacreiSaude
 Para rodar os testes unitários com `APITestCase`:
 
 python manage.py test api.tests.test_profissionais
+
 python manage.py test api.tests.test_consultas
 
 
