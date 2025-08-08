@@ -11,6 +11,8 @@ AWS: <http://56.124.57.201:8000/admin/>
 **Login:** `LacreiSaude`  
 **Senha:** `admin`
 
+Swagger
+http://56.124.57.201:8000/api/swagger/
 ### 🔽 Clonando o Repositório
 
 git clone <https://github.com/EVARR23/LacreiSaude.git>
@@ -31,14 +33,10 @@ python manage.py runserver
 ```
 
 
-
-
 Após a aplicação subir, acesse:
 
-- API de Usuários: [http://127.0.0.1:8000/api/usuario/](http://127.0.0.1:8000/api/usuario/)
 - API de Profissionais: [http://127.0.0.1:8000/api/profissional/](http://127.0.0.1:8000/api/profissional/)
 - API de Consultas: [http://127.0.0.1:8000/api/consulta/](http://127.0.0.1:8000/api/consulta/)
-
 
 
 ## 🧪 Executando os Testes
