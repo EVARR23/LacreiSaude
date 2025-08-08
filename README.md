@@ -1,5 +1,5 @@
 
-# 🚀 Lacrei Saúde - API RESTful
+# 🚀 Lacrei Saúde - 
 
 Este projeto é uma API RESTful desenvolvida com Django e Django REST Framework, voltada para a gestão de usuários, profissionais e consultas na plataforma Lacrei Saúde.
 
@@ -88,4 +88,4 @@ Durante a análise técnica do projeto, foram identificados os seguintes pontos:
 
 
 
-Desenvolvido com 💙 por Eva Rebouças Rodrigues.
+Desenvolvido  por Eva Rebouças Rodrigues.
