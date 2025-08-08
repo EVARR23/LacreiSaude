@@ -20,16 +20,12 @@ git clone <https://github.com/EVARR23/LacreiSaude.git>
 cd LacreiSaude
 
 
-
 ## 🧪 Executando os Testes
 
 Para rodar os testes unitários com `APITestCase`:
 
 python manage.py test api.tests.test_profissionais
 python manage.py test api.tests.test_consultas
-
-
-
 
 
 
