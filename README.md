@@ -4,18 +4,16 @@
 Este projeto é uma API RESTful desenvolvida com Django e Django REST Framework, voltada para a gestão de usuários, profissionais e consultas na plataforma Lacrei Saúde.
 
 ---
-
-Acesse o painel administrativo:  
+### 🔽Acesso o painel administrativo
 AWS: <http://56.124.57.201:8000/admin/>
 
 **Login:** `LacreiSaude`  
 **Senha:** `admin`
 
-Swagger
+### 🔽 Swagger
 http://56.124.57.201:8000/api/swagger/
 
 ### 🔽 Clonando o Repositório
-
 git clone <https://github.com/EVARR23/LacreiSaude.git>
 cd LacreiSaude
 
